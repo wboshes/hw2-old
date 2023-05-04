@@ -79,18 +79,23 @@
 # TODO!
 
 # Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
 # Prints a header for the cast output
+
+# Query the cast data and loop through the results to display the cast output for each movie.
+# TODO!
+
+
+Model.destroy_all
+
+puts "Movies"
+puts "======"
+puts ""
+
 puts ""
 puts "Top Cast"
 puts "========"
 puts ""
-
-# Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
