@@ -100,19 +100,111 @@ puts "Top Cast"
 puts "========"
 puts ""
 
-rails generate model Movies
+rails generate model Movie
 t.string "title"
 t.integer "year_released"
 t.string "rated"
 t.integer "studio_id"
 
-rails generate model Studios
+rails generate model Studio
 t.string "name"
 
-rails generate model Actors
+rails generate model Actor
 t.string "name"
 
-rails generate model Roles
+rails generate model Role
 t.integer "movie_id"
 t.integer "actor_id"
 t.string "character_name"
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = "2005"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = ""
+new_movie.save
+
+new_movie2 = Movie.new
+new_movie2["title"] = "The Dark Knight"
+new_movie2["year_released"] = "2008"
+new_movie2["rated"] = "PG-13"
+new_movie2["studio_id"] = ""
+new_movie2.save
+
+new_movie3 = Movie.new
+new_movie3["title"] = "The Dark Knight Rises"
+new_movie3["year_released"] = "2012"
+new_movie3["rated"] = "PG-13"
+new_movie3["studio_id"] = ""
+new_movie3.save
+
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+new_actor = Actor.new
+new_actor["name"] = "Christian Bale"
+new_actor.save
+
+new_actor2 = Actor.new
+new_actor2["Michael Caine"] = ""
+new_actor2.save
+
+new_actor3 = Actor.new
+new_actor3["name"] = "Liam Neeson"
+new_actor3.save
+
+new_actor4 = Actor.new
+new_actor4["name"] = "Katie Holmes"
+new_actor4.save
+
+new_actor5 = Actor.new
+new_actor5["name"] = "Gary Oldman"
+new_actor5.save
+
+new_actor6 = Actor.new
+new_actor6["name"] = "Heath Ledger"
+new_actor6.save
+
+new_actor7 = Actor.new
+new_actor7["name"] = "Aaron Eckhart"
+new_actor7.save
+
+new_actor8 = Actor.new
+new_actor8["name"] = "Maggie Gyllenhaal"
+new_actor8.save
+
+new_actor9 = Actor.new
+new_actor9["name"] = " Gary Oldman"
+new_actor9.save
+
+new_actor10 = Actor.new
+new_actor10["name"] = " Tom Hard"
+new_actor10.save
+
+new_actor11 = Actor.new
+new_actor11["name"] = "Joseph Gordon-Levitt"
+new_actor11.save
+
+new_actor12 = Actor.new
+new_actor12["name"] = "Anne Hathaway"
+new_actor12.save
+
+"movie_id"
+"actor_id"
+"character_name"
+
+
+new_role = Role.new
+new_role[""] = ""
+new_role[""] = ""
+new_role[""] = ""
+new_role[""] = ""
+new_role.save
+
+new_role2 = Role.new
+new_role2[""] = ""
+new_role2[""] = ""
+new_role2[""] = ""
+new_role2[""] = ""
+new_role2.save
