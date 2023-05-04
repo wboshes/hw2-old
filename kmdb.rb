@@ -99,3 +99,20 @@ puts ""
 puts "Top Cast"
 puts "========"
 puts ""
+
+rails generate model Movies
+t.string "title"
+t.integer "year_released"
+t.string "rated"
+t.integer "studio_id"
+
+rails generate model Studios
+t.string "name"
+
+rails generate model Actors
+t.string "name"
+
+rails generate model Roles
+t.integer "movie_id"
+t.integer "actor_id"
+t.string "character_name"
