@@ -8,3 +8,5 @@ Now that we know how to connect our ruby code (in a Rails app) to our SQL databa
 - Open the new repository (the one in your GitHub account – it should be called `_Your GitHub Username_/hw2`) in Gitpod. 
 - Complete the assignment per the detailed instructions found in the comments of _[kmdb.rb](kmdb.rb)_, executing the script by using the `rails runner kmdb.rb` command.
 - Commit and sync often! When complete, ensure that your most up-to-date, finished work lives in your GitHub repository, then, submit the URL to your GitHub repository page – i.e. `https://github.com/_Your GitHub Username_/hw2`
+
+#start
