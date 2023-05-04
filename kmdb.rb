@@ -190,21 +190,74 @@ new_actor12 = Actor.new
 new_actor12["name"] = "Anne Hathaway"
 new_actor12.save
 
-"movie_id"
-"actor_id"
-"character_name"
-
-
 new_role = Role.new
-new_role[""] = ""
-new_role[""] = ""
-new_role[""] = ""
-new_role[""] = ""
+new_role["movie_id"] = ""
+new_role["actor_id"] = ""
+new_role["character_name"] = "Bruce Wayne"
 new_role.save
 
 new_role2 = Role.new
-new_role2[""] = ""
-new_role2[""] = ""
-new_role2[""] = ""
-new_role2[""] = ""
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Alfred"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Ra's Al Ghul"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Rachel Dawes"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Commissioner Gordon"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Joker"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Harvey Dent"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Commissioner Gordon"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Bane"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "John Blake"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = "Selina Kyle"
+new_role2.save
+
+new_role2 = Role.new
+new_role2["movie_id"] = ""
+new_role2["actor_id"] = ""
+new_role2["character_name"] = ""
 new_role2.save
