@@ -88,55 +88,51 @@
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-Model.destroy_all
-# Movie.destroy_all
-# Studio.destroy_all
-# Actor.destroy_all
-# Role.destroy_all
+# Model.destroy_all
+Movie.destroy_all
+Studio.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
-rails generate model Movie
-t.string "title"
-t.integer "year_released"
-t.string "rated"
-t.integer "studio_id"
+#rails generate model Movie
+#t.string "title"
+#t.integer "year_released"
+#t.string "rated"
+#t.integer "studio_id"
 
-rails generate model Studio
-t.string "name"
+#rails generate model Studio
+#t.string "name"
 
-rails generate model Actor
-t.string "name"
+#rails generate model Actor
+#t.string "name"
 
-rails generate model Role
-t.integer "movie_id"
-t.integer "actor_id"
-t.string "character_name"
+#rails generate model Role
+#t.integer "movie_id"
+#t.integer "actor_id"
+#t.string "character_name"
 
 
-new_studio = Studio.new
-new_studio["name"] = "Warner Bros."
-new_studio.save
+studio = Studio.new
+studio["name"] = "Warner Bros."
+studio.save
 
-studio = Studio.find_by({ "name" => "Warner Bros." })
 
 movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = "2005"
 movie["rated"] = "PG-13"
-movie["studio_id"] = studio["id"]
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight"
 movie["year_released"] = "2008"
 movie["rated"] = "PG-13"
-movie["studio_id"] = studio["id"]
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = "2012"
 movie["rated"] = "PG-13"
-movie["studio_id"] = studio["id"]
 movie.save
 
 
@@ -312,6 +308,7 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Selina Kyle"
 role.save
 
+
 #output
 
 puts "Movies"
@@ -323,8 +320,13 @@ puts "Top Cast"
 puts "========"
 puts ""
 
-SELECT Movie.title, Actor.name, Role.character_name 
-FROM Role 
-INNER JOIN Movie on Movie.id = Roles.movie_id 
-INNER JOIN Actor ON Actor.id = Roles.actor_id;
+batman_movies = Studio.where({ "name" => "Warner Bros." })
 
+for movie in batman_movies
+    title = movie["title"]
+    year_released = movie["year_released"]
+    rated = movie["rated"]
+    studio_id = movie["studio_id"]
+    # display the first_name and last_name
+    puts "#{title} #{year_released} #{rated} #{studio_id}"
+  end
