@@ -94,15 +94,6 @@ Studio.destroy_all
 Actor.destroy_all
 Role.destroy_all
 
-puts "Movies"
-puts "======"
-puts ""
-
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
-
 rails generate model Movie
 t.string "title"
 t.integer "year_released"
@@ -327,4 +318,21 @@ role["movie_id"] = movie["id"]
 role["actor_id"] = actor["id"]
 role["character_name"] = "Selina Kyle"
 role.save
+
+
+#output
+
+puts "Movies"
+puts "======"
+puts ""
+
+puts ""
+puts "Top Cast"
+puts "========"
+puts ""
+
+SELECT Movie.title, Actor.name, Role.character_name 
+FROM Role 
+INNER JOIN Movie on Movie.id = Roles.movie_id 
+INNER JOIN Actor ON Actor.id = Roles.actor_id;
 
