@@ -89,7 +89,10 @@
 # TODO!
 
 
-Model.destroy_all
+Movie.destroy_all
+Studio.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 puts "Movies"
 puts "======"
