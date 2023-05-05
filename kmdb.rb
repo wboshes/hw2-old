@@ -88,11 +88,11 @@
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-
-Movie.destroy_all
-Studio.destroy_all
-Actor.destroy_all
-Role.destroy_all
+Model.destroy_all
+# Movie.destroy_all
+# Studio.destroy_all
+# Actor.destroy_all
+# Role.destroy_all
 
 rails generate model Movie
 t.string "title"
@@ -111,37 +111,41 @@ t.integer "movie_id"
 t.integer "actor_id"
 t.string "character_name"
 
-new_movie = Movie.new
-new_movie["title"] = "Batman Begins"
-new_movie["year_released"] = "2005"
-new_movie["rated"] = "PG-13"
-new_movie["studio_id"] = ""
-new_movie.save
-
-new_movie2 = Movie.new
-new_movie2["title"] = "The Dark Knight"
-new_movie2["year_released"] = "2008"
-new_movie2["rated"] = "PG-13"
-new_movie2["studio_id"] = ""
-new_movie2.save
-
-new_movie3 = Movie.new
-new_movie3["title"] = "The Dark Knight Rises"
-new_movie3["year_released"] = "2012"
-new_movie3["rated"] = "PG-13"
-new_movie3["studio_id"] = ""
-new_movie3.save
 
 new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save
+
+studio = Studio.find_by({ "name" => "Warner Bros." })
+
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = "2005"
+movie["rated"] = "PG-13"
+movie["studio_id"] = studio["id"]
+movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = "2008"
+movie["rated"] = "PG-13"
+movie["studio_id"] = studio["id"]
+movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = "2012"
+movie["rated"] = "PG-13"
+movie["studio_id"] = studio["id"]
+movie.save
+
 
 new_actor = Actor.new
 new_actor["name"] = "Christian Bale"
 new_actor.save
 
 new_actor2 = Actor.new
-new_actor2["Michael Caine"] = ""
+new_actor2["name"] = "Michael Caine"
 new_actor2.save
 
 new_actor3 = Actor.new
@@ -184,6 +188,7 @@ new_actor12 = Actor.new
 new_actor12["name"] = "Anne Hathaway"
 new_actor12.save
 
+
 movie = Movie.find_by({ "title" => "Batman Begins" })
 actor = Actor.find_by({ "name" => "Christian Bale" })
 
@@ -193,7 +198,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Bruce Wayne"
 role.save
 
-movie = Movie.find_by({ "title" => "Batman Begins" })
 actor = Actor.find_by({ "name" => "Michael Caine" })
 
 role = Role.new
@@ -202,7 +206,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Alfred"
 role.save
 
-movie = Movie.find_by({ "title" => "Batman Begins" })
 actor = Actor.find_by({ "name" => "Liam Neeson" })
 
 role = Role.new
@@ -211,7 +214,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Ra's Al Ghul"
 role.save
 
-movie = Movie.find_by({ "title" => "Batman Begins" })
 actor = Actor.find_by({ "name" => "Katie Holmes" })
 
 role = Role.new
@@ -220,7 +222,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Rachel Dawes"
 role.save
 
-movie = Movie.find_by({ "title" => "Batman Begins" })
 actor = Actor.find_by({ "name" => "Gary Oldman" })
 
 role = Role.new
@@ -238,7 +239,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Bruce Wayne"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight" })
 actor = Actor.find_by({ "name" => "Heath Ledger" })
 
 role = Role.new
@@ -247,7 +247,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Joker"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight" })
 actor = Actor.find_by({ "name" => "Aaron Eckhart" })
 
 role = Role.new
@@ -256,7 +255,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Harvey Dent"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight" })
 actor = Actor.find_by({ "name" => "Michael Caine" })
 
 role = Role.new
@@ -265,7 +263,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Alfred"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight" })
 actor = Actor.find_by({ "name" => "Maggie Gyllenhaale" })
 
 role = Role.new
@@ -283,7 +280,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Bruce Wayne"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight Rises" })
 actor = Actor.find_by({ "name" => "Gary Oldman" })
 
 role = Role.new
@@ -292,7 +288,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Commissioner Gordon"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight Rises" })
 actor = Actor.find_by({ "name" => "Tom Hardy" })
 
 role = Role.new
@@ -301,7 +296,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "Bane"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight Rises" })
 actor = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
 
 role = Role.new
@@ -310,7 +304,6 @@ role["actor_id"] = actor["id"]
 role["character_name"] = "John Blake"
 role.save
 
-movie = Movie.find_by({ "title" => "The Dark Knight Rises" })
 actor = Actor.find_by({ "name" => "Anne Hathaway" })
 
 role = Role.new
@@ -318,7 +311,6 @@ role["movie_id"] = movie["id"]
 role["actor_id"] = actor["id"]
 role["character_name"] = "Selina Kyle"
 role.save
-
 
 #output
 
